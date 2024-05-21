@@ -12,12 +12,11 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <title>Admin</title>
+    <title>Project</title>
 </head>
 
 <body>
 
-    @include('admin.partials.header')
 
     @yield('content')
 

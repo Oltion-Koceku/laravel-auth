@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Guest\PageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,16 +17,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Questa è guest
+
 Route::get('/', [PageController::class, 'index'])->name('home');
 
+
+// questo è Admin
 Route::middleware(['auth', 'verified'])
     ->prefix('admin')
-    ->name('admin')
+    ->name('admin.')
     ->group(function () {
 
         Route::get('/' ,[DashboardController::class, 'index'])->name('home');
 
     });
+
+// questo è Project
+
+Route::middleware(['auth', 'verified'])
+        ->prefix('project')
+        ->name('project.')
+        ->group(function () {
+
+            Route::get('/projects', [ProjectController::class, 'index'])->name('home');
+
+        });
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
