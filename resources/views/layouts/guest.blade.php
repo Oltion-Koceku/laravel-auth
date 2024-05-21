@@ -13,6 +13,7 @@
 </head>
 <body>
 
+    @include('guest.partials.header')
 
     @yield('content')
 

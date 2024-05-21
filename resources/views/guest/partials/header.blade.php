@@ -33,10 +33,9 @@
                   </ul>
                 </li>
               </ul>
-              <form class="d-flex mt-3" action="{{ route('logout') }}" method="POST" role="search">
+              <form class="d-flex mt-3" action="{{ route('login') }}" method="POST" role="search">
                 @csrf
-                <button class="btn btn-danger " type="submit"><i class="fa-solid fa-right-from-bracket"></i></button>
-                <p class="pt-2 px-2 ">{{ Auth::user()->name }}</p>
+                <button class="btn btn-success  " type="submit"><i class="fa-solid fa-right-to-bracket"></i></button>
               </form>
             </div>
           </div>
