@@ -1,21 +1,32 @@
 @import '~bootstrap/scss/bootstrap';
 
-header{
+header {
     height: 60px;
     background-color: rgb(1, 1, 54);
-    button{
-        border-color: white  !important;
+
+    button {
+        border-color: white !important;
     }
 }
 
-.admin-dash{
+.admin-dash {
     height: calc(100vh - 60px);
     background-color: white;
-    aside{
+
+    aside {
         height: calc(100vh - 60px);
-        width: 150px;
+        width: 200px;
         background-color: rgb(1, 1, 54);
         color: white;
+
+        li {
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                font-size: 20px;
+            }
+        }
 
     }
 }
