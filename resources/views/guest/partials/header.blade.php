@@ -17,7 +17,7 @@
                   <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Vai in Pagina</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ route('adminhome') }}">Home</a>
+                  <a class="nav-link" href="{{ route('admin.home') }}">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -33,7 +33,7 @@
                   </ul>
                 </li>
               </ul>
-              <form class="d-flex mt-3" action="{{ route('login') }}" method="POST" role="search">
+              <form class="d-flex mt-3" action="/login" method="POST" role="search">
                 @csrf
                 <button class="btn btn-success  " type="submit"><i class="fa-solid fa-right-to-bracket"></i></button>
               </form>

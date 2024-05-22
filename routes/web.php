@@ -34,14 +34,7 @@ Route::middleware(['auth', 'verified'])
 
 // questo è Project
 
-Route::middleware(['auth', 'verified'])
-        ->prefix('project')
-        ->name('project.')
-        ->group(function () {
 
-            Route::get('/projects', [ProjectController::class, 'index'])->name('home');
-
-        });
 
 
 Route::middleware('auth')->group(function () {

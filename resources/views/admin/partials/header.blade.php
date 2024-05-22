@@ -1,10 +1,10 @@
 <header>
 
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Brand</a>
+          <a class="navbar-brand text-white" href="#">Brand</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="text-white"><i class="fa-solid fa-bars"></i></span>
           </button>
           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
@@ -17,7 +17,7 @@
                   <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Vai in Pagina</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ route('adminhome') }}">Home</a>
+                  <a class="nav-link" href="{{ route('admin.home') }}">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
