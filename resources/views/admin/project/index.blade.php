@@ -67,10 +67,15 @@
                             </form>
                         </td>
 
-                        <td>
+                        <td class="d-flex">
                             <button onclick="submitform({{ $project->id }})" class="btn btn-warning "><i
                                     class="fa-solid fa-pencil"></i></button>
-                            <button class="btn btn-danger "><i class="fa-solid fa-trash"></i></button>
+                        <form onsubmit="return confirm('Sei sicuro di voler eliminare il progietto=')" action="{{route('admin.projects.destroy', $project)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger "><i class="fa-solid fa-trash"></i></button>
+                            </form>
+
                         </td>
 
                     </tr>
