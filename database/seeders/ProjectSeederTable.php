@@ -16,7 +16,7 @@ class ProjectSeederTable extends Seeder
      */
     public function run(Faker $faker): void
     {
-        for ($i = 0; $i < 200; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             $new_project = new Project();
 
             $new_project->title = $faker->sentence(3);
