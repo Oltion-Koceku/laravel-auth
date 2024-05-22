@@ -5,6 +5,20 @@
 
         <h1>Projects</h1>
 
+        @if ($errors->any())
+            <div class="alert alert-danger d-flex align-items-center" role="alert">
+                <div>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        @endif
+
+        {{-- with --}}
+
         @if (session('error'))
             <div class="alert alert-danger d-flex align-items-center" role="alert">
                 <div>
@@ -45,8 +59,8 @@
                 @foreach ($projects as $project)
                     <tr>
                         <td class="">
-                            <form
-                            id="form-{{$project->id}}" action="{{ route('admin.projects.update', $project) }}" method="POST">
+                            <form id="form-{{ $project->id }}" action="{{ route('admin.projects.update', $project) }}"
+                                method="POST">
                                 @csrf
                                 @method('PUT')
                                 <input value="{{ $project->title }}" type="text" name="title">
@@ -54,7 +68,8 @@
                         </td>
 
                         <td>
-                            <button onclick="submitform({{$project->id}})" class="btn btn-warning "><i class="fa-solid fa-pencil"></i></button>
+                            <button onclick="submitform({{ $project->id }})" class="btn btn-warning "><i
+                                    class="fa-solid fa-pencil"></i></button>
                             <button class="btn btn-danger "><i class="fa-solid fa-trash"></i></button>
                         </td>
 
@@ -65,13 +80,11 @@
         </table>
 
         <script>
-
-            function submitform(id){
+            function submitform(id) {
 
                 const form = document.getElementById(`form-${id}`)
-                 form.submit();
+                form.submit();
             }
-
         </script>
 
     </div>
