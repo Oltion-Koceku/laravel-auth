@@ -15,7 +15,7 @@ class TypeSeederTable extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run(Faker $faker): void
     {
         $types = [
             'Web Development',
@@ -33,6 +33,12 @@ class TypeSeederTable extends Seeder
         foreach( $types as $type ){
 
             $new_type = new Type();
+
+            $new_type->title = $type;
+            $new_type->slug = Helper::makeSlug( $new_type->title, Type::class);
+            $new_type->description = $faker->paragraph(4);
+
+            $new_type->save();
 
 
         }

@@ -1,9 +1,9 @@
 <aside>
     <div class="container">
         <ul>
-            <li><a href="{{route('admin.projects.index')}}">Projects</a></li>
-            <li><a href="#">Technologies</a></li>
-            <li><a href="#">Types</a></li>
+            <li><a href="{{route('admin.projects.index')}}"><i class="fa-solid fa-bars-progress"></i> Projects</a></li>
+            <li><a href="{{route('admin.technologies.index')}}"><i class="fa-solid fa-microchip"></i> Technologies</a></li>
+            <li><a href="{{route('admin.types.index')}}"><i class="fa-solid fa-keyboard"></i> Types</a></li>
         </ul>
     </div>
 </aside>

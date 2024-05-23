@@ -4,7 +4,10 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Guest\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TechnologyController;
+use App\Http\Controllers\Admin\TypeController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +34,8 @@ Route::middleware(['auth', 'verified'])
         Route::get('/' ,[DashboardController::class, 'index'])->name('home');
 
         Route::resource('projects', ProjectController::class);
+        Route::resource('technologies', TechnologyController::class);
+        Route::resource('types', TypeController::class);
 
     });
 

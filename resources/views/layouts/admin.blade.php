@@ -20,7 +20,7 @@
     @include('admin.partials.header')
 
     <div class="admin-dash d-flex">
-        @include('admin.partials.aside');
+        @include('admin.partials.aside')
         <div class="main-right">
             @yield('content')
 
