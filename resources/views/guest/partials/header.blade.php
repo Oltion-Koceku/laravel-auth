@@ -33,7 +33,7 @@
                   </ul>
                 </li>
               </ul>
-              <form class="d-flex mt-3" action="/login" method="POST" role="search">
+              <form class="d-flex mt-3" action="" method="POST" role="search">
                 @csrf
                 <button class="btn btn-success  " type="submit"><i class="fa-solid fa-right-to-bracket"></i></button>
               </form>

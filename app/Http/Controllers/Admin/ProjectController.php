@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Functions\Helper;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProjectRequest;
 use App\Models\Project;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -26,14 +27,17 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.project.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ProjectRequest $request)
     {
+
+
+
 
         $exist = Project::where('title', $request->title)->first();
 
@@ -46,7 +50,8 @@ class ProjectController extends Controller
 
             $new_project->title = $request->title;
             $new_project->slug = Helper::makeSlug($new_project->title, Project::class);
-
+            // operazione ternario per l'immagine
+            $new_project->img = $request->img ? Storage::put('uploads', $request->img) : null;
             $new_project->save();
 
             return redirect()->route('admin.projects.index')->with('good', 'Il Progetto è stato aggiunto con successo');
@@ -74,22 +79,10 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Project $project)
+    public function update(ProjectRequest $request, Project $project)
     {
 
-        $val_data = $request->validate([
-
-            "title" => "required|min:4|max:100"
-
-        ],
-
-        [
-
-            "title.required" => "Devi inserire il nome del progetto",
-            "title.min" => "ci devono essere almeno :min caratteri",
-            "title.max" => "ci sono più di :max caratteri"
-
-        ]);
+        $val_data = $request->validate();
 
         $exist = Project::where('title', $request->title)->first();
 
